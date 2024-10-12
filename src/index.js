@@ -1,27 +1,18 @@
 const express = require('express')
-const path = require('path')
 
-// dotenv...
+const configViewEngines = require('./config/viewEngines')
+const router = require('./routers/allRouter') 
+
 require('dotenv').config()
 
 const app = express()
-
-// cofig static 
-app.use(express.static(path.join(__dirname, 'public')))
-
-
-
 const port = process.env.PORT || 3000
 
-// config template engines
-app.set('views',path.join( __dirname + '/views'));
-app.set('view engine', 'ejs')
+// config template engines && config static file
+configViewEngines(app);
 
-
-app.get('/', (req, res) => {
-    res.render("index.ejs")
-})
-
+// router
+router(app)
 
 
 app.listen(port, () => {
