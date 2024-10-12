@@ -1,13 +1,30 @@
-const { createServer } = require('node:http');
+const express = require('express')
+const path = require('path')
 
-const port = 3000;
+// dotenv...
+require('dotenv').config()
 
-const server = createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World !!!!!!!!!!!!!');
-});
+const app = express()
 
-server.listen( port , () => {
-  console.log(`Server running at http://localhost:${port}/`);
-});
+// cofig static 
+app.use(express.static(path.join(__dirname, 'public')))
+
+
+
+const port = process.env.PORT || 3000
+
+// config template engines
+app.set('views',path.join( __dirname + '/views'));
+app.set('view engine', 'ejs')
+
+
+app.get('/', (req, res) => {
+    res.render("index.ejs")
+})
+
+
+
+app.listen(port, () => {
+    console.log(`This ::: http:\\localhost:${port}`)
+})
+
