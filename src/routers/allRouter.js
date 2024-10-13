@@ -1,9 +1,9 @@
-const home = require('./home')
-const courses = require('./courses')
+const homeRouter = require('./home')
+const coursesRouter = require('./courses')
 function route (app) {
 
-    app.use('/courses', courses)
-    app.use('/', home)
+    app.use('/courses', coursesRouter)
+    app.use('/', homeRouter)
 
 }
 
