@@ -4,7 +4,8 @@ class homeController {
 
     show(req, res){
         Coursedb.find({})
-            .then(course => res.json(course))
+            .lean()
+            .then(course => res.render('index', { course }))
     }
 
 }

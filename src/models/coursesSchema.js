@@ -6,5 +6,5 @@ const courses = new Schema({
     description: { type: String, maxLength: 600 },
     image: { type: String },
 });
- 
+
 module.exports = mongoose.model('Course', courses);

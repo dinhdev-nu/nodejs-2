@@ -10,6 +10,14 @@ const configViewEngines = (app) => {
     // cofig static 
     app.use(express.static(path.join("./src", 'public')))
 
+    // post req.body
+    app.use(express.json());
+    app.use(
+        express.urlencoded({
+            extended: true,
+        }),
+    );
+
 } 
 
 module.exports = configViewEngines;

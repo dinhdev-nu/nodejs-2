@@ -4,11 +4,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css">
+    
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+
+    <form style="margin-top: 30px;" action="./courses/create" method="post">
+      <label for="" class="name">Name:</label>
+      <input name="name" type="text"> 
+      <!-- name="name": để lấy req.body.name or req.body -->
+      <button>Them</button>
+    </form>
+      
     <div>
-        <img src="./images/anh1.gif" alt="asad">
+        <img style="width: 100px;" src="./images/anh1.gif" alt="asad">
     </div>
+    
 </body>
 </html>
