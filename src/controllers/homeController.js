@@ -1,11 +1,8 @@
-const Coursedb = require('../models/coursesSchema')
 
 class homeController {
 
     show(req, res){
-        Coursedb.find({})
-            .lean()
-            .then(course => res.render('index', { course }))
+        res.render('index')
     }
 
 }

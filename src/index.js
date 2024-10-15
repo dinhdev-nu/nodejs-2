@@ -8,7 +8,7 @@ require('dotenv').config()
 const mongodb = require("./config/db/index")
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000   
 
 
 // config template engines && config static file

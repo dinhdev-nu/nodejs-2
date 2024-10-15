@@ -1,0 +1,16 @@
+<style>
+    input{
+        width: 400px;
+        height: 50px;
+    }
+</style>
+<form style="margin-top: 30px;" method="post" action="/courses/update/<%= course._id%>?_method=PUT" >
+    <label for="" class="name">Name:</label>
+    <input name="name" value="<%= course.name%>" type="text"> 
+    <label for="" class="name">Image URL:</label>
+    <input name="image" value="<%= course.image%>" type="text">
+    <label for="" class="name">Description:</label>
+    <input name="description" value="<%= course.description%>" type="text">
+    <!-- name="name": để lấy req.body.name or req.body -->
+    <button>Them</button>
+</form>
