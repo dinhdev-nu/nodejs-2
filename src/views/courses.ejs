@@ -20,7 +20,8 @@
    
            .container {
            padding: 2px 16px;
-           }   
+           }  
+          
        </style>
 </head>
 <body>
@@ -38,15 +39,22 @@
                   <h4><b><%= course.name%></b></h4>
                   <p><%= course.description %></p>
                   <div style="display: flex;position:absolute; bottom: 10px;">
-                    <button id="<%= course._id%>" class="edit"><a href="/courses/edit/<%= course._id%>">Edit</a></button><button class="delete">Delete</button>
+                    <button  class="edit"><a href="/courses/edit/<%= course._id%>">Edit</a></button>
+                    <button id="<%= course._id%>" class="delete"><a href="/courses/delete/<%= course._id%>">Delete</a></button>
                   </div>
                 </div>
               </div>
           <% }); %>
       </div>
 
-      <script>
 
-      </script>
+      <div style="display: none;" id="form-comfirm">
+        <form id="formdelete" action="delete">
+            <h1>Xóa KHÓA HỌC: </h1>
+            <p>Bạn có muốn xóa khóa học này chư</p>
+            <button>YES</button>
+            <button>No</button>
+        </form>
+      </div>
 </body>
 </html>

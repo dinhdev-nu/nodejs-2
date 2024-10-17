@@ -2,10 +2,18 @@ const Courses = require('../models/coursesSchema')
 
 class storeController {
 
-    edit(req, res){
+    edit(req, res, next){
         Courses.findById(req.params.id)
             .then(course => res.render('editCourse', { course }))
         
+    }
+    delete(req, res){
+        Courses.findByIdAndDelete({_id: req.body.ID})
+            .then( ()=> res.redirect('/courses'))
+    }
+    deleteComfirm(req, res){
+        Courses.findById(req.params.id)
+            .then(course => res.render('deleteComfirm', { course }))
     }
 
     create(req, res){
@@ -24,6 +32,7 @@ class storeController {
         Courses.findOneAndUpdate({_id: req.params.id}, req.body)
             .then(() => res.redirect('/courses'))
     }
+    
 
 }
 

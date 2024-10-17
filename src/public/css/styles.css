@@ -5,7 +5,9 @@ ul {
     overflow: hidden;
     background-color: #333;
   }
-  
+  a{
+    text-decoration: none;
+  }
   li {
     float: left;
   }

@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+                 width: 400px;
+                 height: 200px;
+                 background-color: aqua;
+                 text-align: center;
+                 margin: auto;
+                 margin-top: 200px;
+               }
+               #form-comfirm{ 
+                width: 100%;
+                height: 100%;
+               }
+    </style>
+</head>
+<body>
+
+    <div  id="form-comfirm">
+        <form id="formdelete" action="/courses/delete?_method=delete" method="post">
+            <h1>XÓA KHÓA HỌC</h1>
+            <input style="display: none;" type="text" name="ID" value="<%= course._id %>">
+            <p  >Bạn có chắc chắn xóa <strong><%= course.name %></strong> này không?</p>
+            <button>YES</button>
+            <button type="button" class="no" onclick="window.location.href='/courses'">NO</button>
+        </form>
+      </div>
+
+      <script>
+       
+      </script>
+</body>
+
+
+</html>
